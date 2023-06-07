@@ -1,0 +1,20 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, cost INTEGER, qunatity INTEGER, aisle INTEGER, best_sellers INTEGER);
+INSERT INTO store VALUES (1, "Lavender Soap", 5, 10, 1, 1);
+INSERT INTO store VALUES (2, "Juniper Soap", 5, 8, 2, 2);
+INSERT INTO store VALUES (3, "Rose Quartz", 5, 12, 3, 3);
+INSERT INTO store VALUES (4, "Incense", 15, 30, 4, 4);
+INSERT INTO store VALUES (5, "Keychains", 5, 25, 5, 5);
+INSERT INTO store VALUES (6, "Lipgloss", 8, 7, 6, 6);
+INSERT INTO store VALUES (7, "Cucumber Face Wash", 12, 4, 7,7);
+INSERT INTO store VALUES (8, "Sugar Scrub", 4, 5, 8, 8);
+INSERT INTO store VALUES (9, "Essential Oils", 15, 20, 9, 9);
+INSERT INTO store VALUES (10, "Rings", 10, 10, 10, 10);
+INSERT INTO store VALUES (11, "Nail Polish", 5, 20, 11, 11);
+INSERT INTO store VALUES (12, "Stickers", 1, 10, 12 ,12);
+INSERT INTO store VALUES (13, "Strawberry Soap", 5, 5, 13, 13);
+INSERT INTO store VALUES (14, "Blueberry Soap", 5, 5, 14, 14);
+INSERT INTO store VALUES (15, "Blackberry Soap", 5, 5, 15, 15);   
+
+SELECT * FROM store
+
+
