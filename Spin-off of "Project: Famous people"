@@ -1,0 +1,79 @@
+/*In this project, you’re going to make your own table with some small set of “famous people”, then make more tables about things they do and join those to create nice human readable lists.
+
+For example, here are types of famous people and the questions your data could answer:
+
+Movie stars: What movies are they in? Are they married to each other?
+Singers: What songs did they write? Where are they from?
+Authors: What books did they write?
+Fictional characters: How are they related to other characters? What books do they show up in?*/
+
+/* Create table about the people and what they do here */
+
+/* Table One*/
+
+CREATE TABLE famous_folks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    fullname TEXT,
+    age INTEGER,
+    location TEXT);
+
+INSERT INTO famous_folks (fullname, age, location) VALUES 
+("Brad Pitt", "59","US");
+INSERT INTO famous_folks (fullname, age, location) VALUES  
+("Angelina Jolie", "48", "US"); 
+INSERT INTO famous_folks (fullname, age, location) VALUES  
+("Jennifer Lawrence", "32", "US"); 
+INSERT INTO famous_folks (fullname, age, location) VALUES 
+("Leonardo DiCaprio", "48", "US"); 
+INSERT INTO famous_folks (fullname, age, location) VALUES 
+("Miley Cyrus", "30", "US"); 
+INSERT INTO famous_folks (fullname, age, location) VALUES 
+("Liam Hemsworth", "33", "ASTL");
+
+/*CheckWork*/
+SELECT* FROM famous_folks;
+
+/*Table Two*/
+
+CREATE TABLE about (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    famous_id INTEGER,
+    pop_movie TEXT,
+    spouse TEXT);
+    
+INSERT INTO about (famous_id, pop_movie, spouse) VALUES (1, "Mr. And Mrs. Smith", "Angelina Jolie");
+INSERT INTO about (famous_id, pop_movie, spouse) VALUES (2, "Mr. And Mrs. Smith", "Brad Pitt");
+INSERT INTO about (famous_id, pop_movie, spouse) VALUES (3, "The Silverlinings Playbook", "Not Married");
+INSERT INTO about (famous_id, pop_movie, spouse) VALUES (4, "Catch Me If You Can", "Not Married");
+INSERT INTO about (famous_id, pop_movie, spouse) VALUES (5, "The Last Song", "Liam Hemsworth");
+INSERT INTO about (famous_id, pop_movie, spouse) VALUES (6, "The Last Song", "Miley Cyrus");
+
+/*CheckWork*/
+SELECT * FROM about;
+
+/*Return People Who Are Married*/
+SELECT famous_folks.fullname, about.spouse
+FROM famous_folks
+JOIN about
+ON famous_folks.id = about.famous_id;
+
+/*Return People In Movies Together*/
+SELECT famous_folks.fullname, about.pop_movie
+FROM famous_folks
+JOIN about
+ON famous_folks.id = about.famous_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
